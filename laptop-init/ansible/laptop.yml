@@ -52,10 +52,10 @@
        state: directory
        owner: edu
        group: edu
-       mode: 0775
+       mode: '0775'
        recurse: yes
 
-    - name: Crear carpeta de Codigo
+    - name: Crear carpeta de Codigo de prueba Belcorp
       file:
        path: /home/edu/Codigo/proyects_belcorp
        state: directory
@@ -65,5 +65,10 @@
        recurse: yes
        
   # Descarga de codigos
-       
+    - name: Clone Repo Bash
+      git:
+        repo: https://github.com/orcasing/bash.git
+        dest: /home/edu/Codigo/bash
+        clone: yes
+        
     
