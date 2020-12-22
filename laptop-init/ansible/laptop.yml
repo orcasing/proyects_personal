@@ -1,0 +1,41 @@
+#####################################################
+# Designed by: Eduardo Zuñiga Davila
+# Programmed by: Eduardo Zuñiga Davila
+# Proyect: Laptop
+# File: laptop.yml
+# Modified: 20/12/22
+#####################################################
+
+---
+
+- hosts: laptop
+  tasks:
+    - name: instalar VIM
+      apt: name=vim state=present
+      become: yes
+      
+    - name: instalar Visual Studio Code [1]
+      apt: name={{ item }} state=present
+      with_items:
+       - software-properties-common
+       - apt-transport-https
+       - wget
+      become: yes
+             
+    - name: instalar Visual Studio Code [2] 
+      apt_key:
+        url: https://packages.microsoft.com/keys/microsoft.asc
+        state: present
+      become: yes
+ 
+    - name: instalar Visual Studio Code [3]
+      apt_repository:
+        repo: "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+        state: present
+        update_cache: true
+      become: yes
+      
+    - name: instalar Visual Studio Code [4]
+      apt: name=code state=present
+      become: yes
+      
