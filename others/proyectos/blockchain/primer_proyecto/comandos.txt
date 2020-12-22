@@ -1,0 +1,20 @@
+############# tercera clase
+
+node -v; npm -v
+
+mkdir /home/edu/Codigo/personales/blockchain/primer_proyecto
+cd /home/edu/Codigo/personales/blockchain/primer_proyecto
+
+npm init -y									                                # 	inicializar el proyecto
+npm i nodemon --save-dev							                        # 	instalar dependencia en el proyecto
+touch /home/edu/Codigo/personales/blockchain/primer_proyecto/block.js		# 	creo archivo y escribo code
+touch /home/edu/Codigo/personales/blockchain/primer_proyecto/dev-test.js
+####code git
+npm run dev-test								                            # 	ejecucion
+npm i crypto-js --save								                        # 	libreria de encriptacion
+
+#### last class
+# R3 es l comunidad de Empresas asociadas para el uso del blockchain
+# protocolo lora
+
+## https://blockgeeks.com/guides/what-is-blockchain-technology/

@@ -10,6 +10,12 @@
 
 - hosts: laptop
   tasks:
+   
+  # instalacion de productos
+    - name: instalar GIT
+      apt: name=vim state=present
+      become: yes
+      
     - name: instalar VIM
       apt: name=vim state=present
       become: yes
@@ -38,4 +44,26 @@
     - name: instalar Visual Studio Code [4]
       apt: name=code state=present
       become: yes
-      
+
+  # configuracion de fuentes
+    - name: Crear carpeta de Codigo
+      file:
+       path: /home/edu/Codigo
+       state: directory
+       owner: edu
+       group: edu
+       mode: 0775
+       recurse: yes
+
+    - name: Crear carpeta de Codigo
+      file:
+       path: /home/edu/Codigo/proyects_belcorp
+       state: directory
+       owner: edu
+       group: edu
+       mode: 0775
+       recurse: yes
+       
+  # Descarga de codigos
+       
+    
